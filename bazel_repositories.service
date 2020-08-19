@@ -1,0 +1,12 @@
+<service name="bazel_repositories">
+  <summary>Downloads dependencies of projects using Bazel</summary>
+  <description>OBS Source Service to download dependencies of projects using Bazel</description>
+  <parameter name="exclude">
+    <description>Dependencies to exclude from the vendor tarball (for example, if you want to use some dependencies with bazel-workspaces).</description>
+  </parameter>
+  <parameter name="override-repository">
+    <description>List of repositories to override with local directories, separated with a coma. Syntax: name_of_repository=path</description>
+  <parameter name="target">
+    <description>Target for Bazel commands (mainly for `bazel fetch`). Default: //...</description>
+  </parameter>
+</service>
