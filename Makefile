@@ -8,8 +8,9 @@ all:
 
 install:
 	install -d $(DESTDIR)$(servicedir)
-	install -m 0755 bazel_repositories $(DESTDIR)$(servicedir)
+	install -D -m 0755 bazel_repositories.py $(DESTDIR)$(servicedir)/bazel_repositories
 	install -m 0644 bazel_repositories.service $(DESTDIR)$(servicedir)
 
 test:
-	flake8 bazel_repositories
+	flake8 bazel_repositories.py
+	pytest -v
